@@ -1,0 +1,186 @@
+@font-face {
+  font-family: MAIN;
+  src: url(./font/LinLibertine_RB.ttf);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 5; 
+  font-family: MAIN;
+  font-size: 30px;
+}
+
+#header .menu-icon {
+  position: absolute;
+  top: 50%;
+  right: 100px; 
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  z-index: 3;
+  font-size: 25px;
+}
+
+#header .menu-icon:hover {
+  /*background-color: black;*/
+  color: rgb(102, 102, 102);
+}
+
+#slide-in-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 30%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  z-index: 4; 
+  overflow-y: auto; 
+  padding: 20px;
+  transform: translateX(100%);
+  transition: transform 0.5s ease-in-out;
+}
+
+#slide-in-menu.show {
+  transform: translateX(0);
+}
+
+#slide-in-menu p {
+  display: block;
+  padding: 10px 0;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  border-bottom: 1px solid black;
+}
+
+#slide-in-menu a:last-of-type {
+  border-bottom: none;
+}
+
+canvas {
+  display: block;
+}
+
+#container {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+button {
+  position: absolute;
+  padding: 10px;
+  font-size: 25px;
+  font-weight: bold;
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-family: MAIN;
+}
+
+.button1 {
+  top: 450px;
+  left: 200px;
+}
+
+.button2 {
+  top: 450px;
+  left: 800px;
+}
+
+.button3 {
+  top: 450px;
+  left: 1300px;
+}
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 3;
+  transition: opacity 1s ease-in-out;
+  pointer-events: none;
+}
+
+#intro-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 50px;
+  color: #fff;
+  font-family: MAIN;
+  max-width: 80%;
+  text-align: center;
+  line-height: 1.5;
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+
+.overlay-show #overlay {
+  display: block;
+  opacity: 1;
+}
+
+.overlay-show #intro-text {
+  display: block;
+  opacity: 1;
+}
+
+.overlay-show #overlay,
+.overlay-show #intro-text {
+  transition-delay: 0s;
+}
+
+#overlay:not(.show) {
+  opacity: 0;
+}
+
+#intro-text:not(.show) {
+  opacity: 0;
+
+}
+
+a.button {
+  position: absolute;
+  padding: 10px;
+  font-size: 25px;
+  font-weight: bold;
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-family: MAIN;
+  text-decoration: none; /* add this line */
+}
+
+a.button:hover {
+  background-color: #ccc; /* update this line */
+  color: black; /* update this line */
+}
+#canvas-container {
+  position: relative; /* Add this line */
+}
